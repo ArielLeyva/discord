@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Discord" />
+
+    <title>Discord</title>
+    <link rel="stylesheet" type="text/css" href="./src/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./src/css/modal.css" />
+  </head>
+  <body>
+    <nav class="navbar">Discord</nav>
+    <main>
+      <div class="servers">
+        <img src="src/img/button.png" alt="Discord Button" />
+        <div class="list scroll">
+          <div class="server">
+            <img data-toggle="show-modal" data-target="#add-server-modal" src="./src/img/add_server.png" alt="Add server" />
+          </div>
+          <div class="server">
+            <img src="./src/img/discovery.png" alt="Discovery" id="discovery" />
+          </div>
+        </div>
+      </div>
+      <div class="channels">
+        <div class="channels-navbar">
+          <input type="text" placeholder="Buscar canal" />
+          <button type="button" data-toggle="show-modal" data-target="#add-channel-modal">
+            <img alt="Add Channel" src="src/img/Plus.png" />
+          </button>
+        </div>
+        <div class="list scroll">
+          <div class="placeholder">
+            <div>
+              <img src="src/img/binoculars-fill.svg" alt="No server selected" />
+              <h4>No se ha seleccionado ningún servidor</h4>
+            </div>
+          </div>
+        </div>
+        <nav>
+          <img src="./src/img/users/16.jpeg" alt="Avatar del usuario" />
+          <div>
+            <h6>Nombre de usuario</h6>
+            <small>5 servidores</small>
+          </div>
+          <div>
+            <button type="button" data-toggle="show-modal" data-target="#update-password-modal">
+              <img src="./src/img/key-fill.svg" alt="Password" />
+            </button>
+            <button type="button" data-toggle="show-modal" data-target="#update-profile-modal">
+              <img src="./src/img/settings.png" alt="Settings" />
+            </button>
+          </div>
+        </nav>
+      </div>
+      <div class="messages">
+        <div class="list scroll">
+          
+        </div>
+        <form id="send-form">
+          <input type="text" placeholder="Escribe un mensaje..." />
+          <button type="submit"><img src="src/img/send.png" alt="Send message" /></button>
+        </form>
+      </div>
+    </main>
+
+    <div class="modal" id="add-server-modal">
+      <div class="modal-content">
+        <div class="modal-title">
+          <button data-target="#add-server-modal" data-toggle="dismiss-modal" type="button"><img src="src/img/add_server.png" alt="Add Server" /></button>
+          <h5>Crear un nuevo servidor</h5>
+          <p>Introduce los datos del servidor</p>
+        </div>
+        <div class="modal-body create-server">
+          <form>
+            <input data-target="#server-image" type="file" name="image" style="display: none" required />
+            <img id="server-image" data-toggle="show-picker" src="src/img/image-placeholder.jpg" alt="Server image" />
+            <input type="text" placeholder="Nombre del servidor" name="name" required />
+            <textarea placeholder="Descripción del servidor"></textarea>
+            <div>
+              <button data-toggle="dismiss-modal" data-target="#add-server-modal" type="button" class="btn-secondary">Cancelar</button>
+              <button type="submit" class="btn-success">Aceptar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="add-channel-modal">
+      <div class="modal-content">
+        <div class="modal-title">
+          <button data-target="#add-channel-modal" data-toggle="dismiss-modal" type="button"><img src="src/img/add_server.png" alt="Add Channel" /></button>
+          <h5>Crear un nuevo canal</h5>
+          <p>Introduce los datos del canal</p>
+        </div>
+        <div class="modal-body create-channel">
+          <form>
+            <input type="text" placeholder="Nombre del canal" name="name" required />
+            <textarea placeholder="Descripción del canal"></textarea>
+            <div>
+              <button data-toggle="dismiss-modal" data-target="#add-channel-modal" type="button" class="btn-secondary">Cancelar</button>
+              <button type="submit" class="btn-success">Aceptar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="update-profile-modal">
+      <div class="modal-content">
+        <div class="modal-title">
+          <button data-target="#update-profile-modal" data-toggle="dismiss-modal" type="button"><img src="src/img/add_server.png" alt="Add Channel" /></button>
+          <h5>Actualizar datos del perfil</h5>
+          <p>Introduce los nuevos datos de tu perfil</p>
+        </div>
+        <div class="modal-body update-profile">
+          <form>
+            <input data-target="#profile-image" type="file" name="image" style="display: none" required />
+            <img id="profile-image" data-toggle="show-picker" src="src/img/image-placeholder.jpg" alt="Progile image" />
+            <input type="text" placeholder="Nombre (s)" name="name" required />
+            <input type="text" placeholder="Apellido (s)" name="last_name" required />
+            <input type="email" placeholder="Correo electrónico del usuario" name="email" required />
+            <input type="text" placeholder="Nombre de usuario" readonly />
+            <div>
+              <button data-toggle="dismiss-modal" data-target="#update-profile-modal" type="button" class="btn-secondary">Cancelar</button>
+              <button type="submit" class="btn-success">Actualizar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="update-password-modal">
+      <div class="modal-content">
+        <div class="modal-title">
+          <button data-target="#update-password-modal" data-toggle="dismiss-modal" type="button"><img src="src/img/add_server.png" alt="Add Channel" /></button>
+          <h5>Actualizar contraseña</h5>
+          <p>Introduce los datos para cambiar tu contraseña</p>
+        </div>
+        <div class="modal-body update-password">
+          <form>
+            <input type="password" placeholder="Contraseña actual" name="current_password" required />
+            <input type="password" placeholder="Contraseña nueva" name="new_password_1" required />
+            <input type="password" placeholder="Vuelva a escribir la contraseña" name="new_password_2" required />
+            <div>
+              <button data-toggle="dismiss-modal" data-target="#update-password-modal" type="button" class="btn-secondary">Cancelar</button>
+              <button type="submit" class="btn-success">Aceptar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./src/js/data.js"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/modal.js"></script>
+  </body>
+</html>

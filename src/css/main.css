@@ -1,0 +1,293 @@
+html {
+    font-family: sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6, p, small {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/*  Scrolls */
+.scroll::-webkit-scrollbar {
+    width: 8px;
+    border-radius: .5rem;
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: rgba(102, 107, 122, 1);
+    border-radius: .5rem;
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-thumb:active,
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 107, 122, 1);
+    border-radius: .5rem;
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: rgba(29, 30, 34, 1);
+    border-radius: .5rem;
+    display: none;
+}
+
+.scroll::-webkit-scrollbar-track:hover,
+.scroll::-webkit-scrollbar-track:active {
+    background: rgba(29, 30, 34, 1);
+    border-radius: .5rem;
+    display: none;
+}
+.placeholder {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    height: calc(100vh - 10rem);
+}
+.placeholder > div {
+    text-align: center;
+    width: calc(100% - 1rem);
+    color: #72767D;
+}
+.placeholder > div > img {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: .75rem;
+}
+
+.navbar {
+    background-color: #202225;
+    padding: .5rem;
+    font-size: .9em;
+    color: #72767D;
+    font-weight: bold;
+}
+main {
+    display: flex;
+    width: calc(100vw - 0rem);
+    height: calc(100vh - 2rem);
+    background-color: #202225;
+    overflow: hidden;
+}
+.servers {
+    width: 3.5rem;
+    height: 100%;
+    background-color: #202225;
+}
+.servers > img {
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-left: .25rem;
+}
+.servers > .list {
+    height: calc(100vh - 2rem);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.channels {
+    width: 15rem;
+    height: 100%;
+    background-color: #2f3136;
+    border-top-left-radius: .5rem;
+}
+.channels-navbar {
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px #202225;
+}
+.channels-navbar > input {
+    border-radius: .25rem;
+    background-color: #1b1d1f;
+    border: none;
+    padding: .5rem;
+}
+.channels-navbar > button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: .5rem;
+}
+.channels > .list {
+    height: calc(100vh - 3.25rem - 2rem - 3rem);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.channels > nav {
+    height: 2.25rem;
+    background: #292b2f;
+    padding: .5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.channels > nav > div:last-of-type {
+    display: flex;
+}
+.channels > nav > img {
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+}
+.channels > nav > div {
+    padding-left: .25rem;
+    
+}
+.channels > nav > div:first-of-type {
+    width: 100%;
+}
+.channels > nav > div > small {
+    font-size: .7em;
+    text-align: right;
+    color: #8d8d8d;
+}
+.channels > nav > div > button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.channels > nav > div > button > img {
+    width: 1rem;
+    height: 1rem;
+}
+.channel, .message {
+    padding: .5rem;
+    color: #8E9297;
+    display: flex;
+    cursor: pointer;
+}
+.channel > img, .message > img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    margin-right: .5rem;
+}
+.channel > div > h5, .message > div > h5 {
+    font-weight: bold;
+    color: #adb0b4;
+}
+.channel > div > p {
+    font-size: .7em;
+}
+
+.messages {
+    width: calc(100vw - 15rem - 2.5rem);
+    background-color: #36393f;
+    height: 100%;
+}
+.messages > .list {
+    height: calc(100vh - 2.5rem - 3.5rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: .5rem;
+    text-align: center;
+}
+.messages > form {
+    background-color: #36393f;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+}
+.messages > form > input {
+    border-radius: .25rem;
+    background-color: #1b1d1f;
+    border: none;
+    padding: .5rem;
+    width: 100%;
+}
+.messages > form > button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: .5rem;
+}
+.messages > form > button > img {
+    width: 1rem;
+}
+.message {
+    border-bottom: solid 1px #7e7e7e;
+    text-align: left;
+}
+.message:last-of-type {
+    border-bottom: none;
+}
+.message > div {
+    width: 100%;
+}
+.message > div > p {
+    font-size: .9em;
+    color: #cacaca;
+    line-height: 1.3em;
+}
+.message > div > small {
+    float: right;
+    font-size: .75em;
+    text-align: right;
+}
+.message > div > h5 {
+    color: #fff;
+}
+
+.server {
+    text-align: center;
+    padding: .5rem;
+    cursor: pointer;
+    position: relative;
+}
+.server > img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+}
+.server > span {
+    position: absolute;
+    bottom: .35rem;
+    right: .35rem;
+    background-color: #ed4245;
+    border: solid 2px #202225;
+    border-radius: 100%;
+    padding: .1rem .3rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: .75em;
+}
+
+.server-lg {
+    max-width: 25rem;
+    background-color: #202225;
+    border-radius: .5rem;
+    margin: 1rem;
+    text-align: left;
+}
+.server-lg > img {
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    width: 100%;
+}
+.server-lg > div {
+    padding: .5rem;
+}
+.server-lg > div > h4 {
+    color: #fff;
+}
+.server-lg > div > p {
+    color: #cacaca;
+    font-size: .85em;
+    margin-top: .5rem;
+}
+.server-lg > div > small {
+    color: #424242;
+    font-size: .75em;
+    float: right;
+}
+.server-lg > div:last-of-type {
+    text-align: center;
+    width: 100%;
+}
